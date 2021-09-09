@@ -7,19 +7,42 @@
 
   <style>
     .a {
-      background-color: grey;
-      border-top: 1px solid black;
-      border-right: 1px solid black;
+      background-color: #454545;
       box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
       width: 25rem;
       height: 30rem;
       position: absolute;
+      bottom: 2.5rem;
+      left: 0;
+    }
+
+    button {
+      position: absolute;
       bottom: 0;
       left: 0;
+      height: 2.5rem;
+      width: 4rem;
+      box-sizing: border-box;
+      border: 0;
+      background-color: #454545;
+      color: white;
+    }
+
+    button:hover {
+      color: #429CE3;
     }
   </style>
 </head>
 <body>
-  <div class="a"></div>
+  <div class="a" style="visibility: hidden;"></div>
+  <button>Start</button>
+
+  <script>
+    const button = document.querySelector('button')
+    const box = document.querySelector('.a')
+    button.addEventListener('click', function () {
+      box.style.visibility = box.style.visibility === 'hidden' ? 'visible' : 'hidden'
+    })
+  </script>
 </body>
 </html>
